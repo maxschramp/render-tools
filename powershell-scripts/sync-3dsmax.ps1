@@ -8,3 +8,5 @@ $WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut(([Environment]::GetFolderPath("MyDocuments")+'\3ds Max 2022\materiallibraries\material-libraries.lnk'))
 $Shortcut.TargetPath = ($dir.FullName+'\material-libraries\')
 $Shortcut.Save()
+
+#Copy-Item ($dir.FullName+'\lut') -Destination 'C:\Program Files\Corona\' -Container
