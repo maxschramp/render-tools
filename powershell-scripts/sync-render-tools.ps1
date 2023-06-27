@@ -1,4 +1,4 @@
 git pull
 git add --all
-git commit -m 'sync-render-tools'
+git commit -m 'syncing all changes'
 git push
