@@ -16,8 +16,8 @@ $Shortcut.Save()
 # [Environment]::SetEnvironmentVariable("RENDER_TOOLS", $env:RENDER_TOOLS + $dir.FullName, "Machine")
 
 <# Copy Render Settings template #>
-Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination (($env:APPDATA).Replace('Roaming','Local')+"\Autodesk\3dsMax\2022 - 64bit\ENU\en-US\StartupTemplates\renderpresets\")
-Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination ([Environment]::GetFolderPath("MyDocuments")+"\3ds Max 2022\renderpresets\")
+Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination (($env:APPDATA).Replace('Roaming','Local')+"\Autodesk\3dsMax\2022 - 64bit\ENU\en-US\StartupTemplates\renderpresets\") -Force
+Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination ([Environment]::GetFolderPath("MyDocuments")+"\3ds Max 2022\renderpresets\") -Force
 
 <# Generate custom paths .mxp linked to render-tools directory #>
 Write-Host 'Adding paths to project folder'
@@ -25,7 +25,7 @@ $pathFileA = (($env:APPDATA).Replace('Roaming','Local')+"\Autodesk\3dsMax\2022 -
 $pathFileB = ([Environment]::GetFolderPath("MyDocuments")+'\3ds Max 2022\3ds Max 2022.mxp')
 $dirAll = Get-ChildItem -Path $dir -Directory -Recurse
 for ($i = 0; $i -lt $dirAll.Count; $i++) {
-    #Add-Content $pathFileA -Value ('Dir'+(900 + $i)+'='+$dirAll[$i].FullName)
+    Add-Content $pathFileA -Value ('Dir'+(900 + $i)+'='+$dirAll[$i].FullName)
     Add-Content $pathFileB -Value ('Dir'+(900 + $i)+'='+$dirAll[$i].FullName)
 }
 
