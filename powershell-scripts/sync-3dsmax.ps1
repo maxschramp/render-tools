@@ -14,6 +14,7 @@ $Shortcut.TargetPath = ($dir.FullName+'\material-libraries\')
 $Shortcut.Save()
 
 <# Copy Render Settings template #>
+<<<<<<< HEAD
 Write-Host 'Adding render preset to project directory...'
 Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination ($dirProject.FullName+'\renderpresets\')
 
@@ -31,6 +32,19 @@ $dirList = Get-ChildItem -Path $dir.FullName -Directory -Recurse
 
 for ($i = 0; $i -lt $dirList.Count; $i++) {
     Add-Content -Path ($dirProject.FullName+'\3ds Max 2022.mxp') -Value ('Dir'+(900 + $i)+'='+$dirList[$i].FullName)
+=======
+Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination (($env:APPDATA).Replace('Roaming','Local')+"\Autodesk\3dsMax\2022 - 64bit\ENU\en-US\StartupTemplates\renderpresets\") -Force
+Copy-Item ($dir.FullName+'\configs\3dsmax\ms-corona9-renderpreset.rps') -Destination ([Environment]::GetFolderPath("MyDocuments")+"\3ds Max 2022\renderpresets\") -Force
+
+<# Generate custom paths .mxp linked to render-tools directory #>
+Write-Host 'Adding paths to project folder'
+$pathFileA = (($env:APPDATA).Replace('Roaming','Local')+"\Autodesk\3dsMax\2022 - 64bit\ENU\en-US\StartupTemplates\StartupTemplates.mxp")
+$pathFileB = ([Environment]::GetFolderPath("MyDocuments")+'\3ds Max 2022\3ds Max 2022.mxp')
+$dirAll = Get-ChildItem -Path $dir -Directory -Recurse
+for ($i = 0; $i -lt $dirAll.Count; $i++) {
+    Add-Content $pathFileA -Value ('Dir'+(900 + $i)+'='+$dirAll[$i].FullName)
+    Add-Content $pathFileB -Value ('Dir'+(900 + $i)+'='+$dirAll[$i].FullName)
+>>>>>>> 7be02dc39eb9c5687cc388333aabe2ac397e56fd
 }
 
 <# generate custom material library layout file #>
