@@ -1,5 +1,5 @@
 <mtlbrowser xml_version="2" show_incompatible="0" show_empty_groups="1">
-    <group cid="10:2" name="Favourites" color="#ffffda2b" viewtype="0" iconsize="70" is_open="0" is_default_group="0">
+    <group cid="10:2" name="Favourites" color="#ffffffff" viewtype="0" iconsize="70" is_open="0" is_default_group="0">
         <item cid="10:5" name="CoronaLegacyMtl" sclass_id="3072" class_id="1891525894:1149841885" />
         <item cid="10:5" name="&#x0D;CoronaPhysicalMtl" sclass_id="3072" class_id="1762831241:-2028660960" />
         <item cid="10:5" name="CoronaLightMtl" sclass_id="3072" class_id="1404531066:1343049875" />
@@ -15,11 +15,11 @@
         <item cid="10:5" name="CoronaTriplanar" sclass_id="3088" class_id="-14052048:51137502" />
         <item cid="10:5" name="CoronaUvwRandomizer" sclass_id="3088" class_id="585889836:-889912679" />
     </group>
-    <group cid="10:3" name="ms-corona-default.mat" color="#ff44ff51" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="S:\render-tools\material-libraries\ms-corona-default.mat" />
-    <group cid="10:3" name="ms-corona-tools.mat" color="#ff44fff2" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="S:\render-tools\material-libraries\ms-corona-tools.mat" />
-    <group cid="10:3" name="ms-corona-quixel.mat" color="#ff446aff" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="S:\render-tools\material-libraries\ms-corona-quixel.mat" />
-    <group cid="10:3" name="ms-corona-lighting.mat" color="#ff6a44ff" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="S:\render-tools\material-libraries\ms-corona-lighting.mat" />
-    <group cid="10:3" name="ms-corona-vegetation.mat" color="#ffff4444" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="S:\render-tools\material-libraries\ms-corona-vegetation.mat" />
+    <group cid="10:3" name="ms-corona-default.mat" color="#ffffb17f" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="%RENDERTOOLS%\material-libraries\ms-corona-default.mat" />
+    <group cid="10:3" name="ms-corona-tools.mat" color="#ff000000" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="%RENDERTOOLS%\material-libraries\ms-corona-tools.mat" />
+    <group cid="10:3" name="ms-corona-quixel.mat" color="#ff0481ff" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="%RENDERTOOLS%\material-libraries\ms-corona-quixel.mat" />
+    <group cid="10:3" name="ms-corona-lighting.mat" color="#fffff8b1" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="%RENDERTOOLS%\material-libraries\ms-corona-lighting.mat" />
+    <group cid="10:3" name="ms-corona-vegetation.mat" color="#ffc4ff7f" viewtype="0" iconsize="70" is_open="0" nview_menu_hide_icons="1" is_default_group="0" lib_path="%RENDERTOOLS%\material-libraries\ms-corona-vegetation.mat" />
     <group cid="10:2" name="Materials" viewtype="0" iconsize="70" is_open="0" is_default_group="1" is_locked="1" is_hierarchy_level_fixed="1">
         <group cid="10:2" name="General" viewtype="0" iconsize="70" is_open="1" is_default_group="1" is_locked="1" />
         <group cid="10:2" name="Arnold" viewtype="0" iconsize="70" is_open="1" is_default_group="1" is_locked="1">
