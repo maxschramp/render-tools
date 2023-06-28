@@ -9,4 +9,8 @@ $Shortcut = $WshShell.CreateShortcut(([Environment]::GetFolderPath("MyDocuments"
 $Shortcut.TargetPath = ($dir.FullName+'\material-libraries\')
 $Shortcut.Save()
 
+Copy-Item $dir\configs\3dsmax\init-scene.max -Destination (([Environment]::GetFolderPath("MyDocuments")+'\3ds Max 2022\materiallibraries\material-libraries.lnk'))
+
 #Copy-Item ($dir.FullName+'\lut') -Destination 'C:\Program Files\Corona\' -Container
+
+[Environment]::SetEnvironmentVariable("RENDER_TOOLS", $env:RENDER_TOOLS + $dir.FullName, "Machine")
