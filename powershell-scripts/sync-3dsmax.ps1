@@ -35,6 +35,7 @@ for ($i = 0; $i -lt $dirList.Count; $i++) {
 }
 
 <# generate custom material library layout file #>
+<# I need to convert this to checking and then adding to the .xml #>
 Write-Host 'Backing up material library layout...' -ForegroundColor Yellow
 Copy-Item ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl') -Destination ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl.bak.'+(get-date -UFormat %y%m%d_%Hh%Mm%Ss)) -Force
 
