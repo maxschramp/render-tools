@@ -20,6 +20,11 @@ macroScript Setup_Animation category:"render-tools" toolTip:"Setup Animation in 
 	ac.enableCameraMb = on -- enable camera motion blur
 	ac.enableGeometryMb = on -- enable geometry motion blur
 	ac.shutterParam = 0 -- set to shutter speed mode
+
+ac.enableClipping = on
+ac.showClipRange = on
+ac.clippingNear = 100
+
 		
 	select (getNodeByName ac.name) -- select the active camera
 
