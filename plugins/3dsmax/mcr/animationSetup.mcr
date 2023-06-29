@@ -2,6 +2,7 @@ macroScript Setup_Animation category:"render-tools" toolTip:"Setup Animation in 
 
 (
 	-- Set up camera and scene for animations
+	maxops.setDefaultTangentType #linear #linear -- set tangents to linear
 	animationRange = interval 0 120 -- set range to 5 seconds
 	frameRate = 24 -- set filmic frame rate
 	realTimePlayback = true -- ensure realtime playback
