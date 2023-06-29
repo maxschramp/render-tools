@@ -13,14 +13,14 @@ macroScript Setup_Animation category:"render-tools" toolTip:"Setup Animation in 
 
 	ac = getactivecamera()
 
-	ac.shutterSpeed = 50
-	ac.mblurDuration = 0.48
-	ac.shutterAngle = 172.8
-	ac.enableCameraMb = on
-	ac.enableGeometryMb = on
-	ac.shutterParam = 0
+	ac.shutterSpeed = 50 -- set shutter speed to 1/50
+	ac.mblurDuration = 0.48  -- set shutter speed to 1/50
+	ac.shutterAngle = 172.8 -- set shutter speed to 1/50
+	ac.enableCameraMb = on -- enable camera motion blur
+	ac.enableGeometryMb = on -- enable geometry motion blur
+	ac.shutterParam = 0 -- set to shutter speed mode
 		
-	select (getNodeByName ac.name)
+	select (getNodeByName ac.name) -- select the active camera
 
-	renderSceneDialog.update()
+	renderSceneDialog.update() -- reload UI
 )
