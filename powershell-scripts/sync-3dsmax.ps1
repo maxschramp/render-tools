@@ -45,12 +45,12 @@ Set-Content ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl') -Value $layo
 
 <# update material library or pull latest material libraries #>
 
-<# copy scripts #>
+<# copy scripts 
 Write-Host 'Copying maxscript scripts...' -ForegroundColor Yellow
 Copy-Item -Path 'S:\render-tools\plugins\3dsmax\ms' -Destination ($dirENU.FullName+'\scripts') -Container -Recurse -Force
 
 Write-Host 'Copying startup scripts...' -ForegroundColor Yellow
-Copy-Item -Path 'S:\render-tools\plugins\3dsmax\startup' -Destination ($dirENU.FullName+'\scripts\startup') -Container -Recurse -Force
+Copy-Item -Path 'S:\render-tools\plugins\3dsmax\startup' -Destination ($dirENU.FullName+'\scripts\startup') -Container -Recurse -Force #>
 
 <# set up simple UI #>
 
