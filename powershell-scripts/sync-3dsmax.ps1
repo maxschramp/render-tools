@@ -43,6 +43,22 @@ Write-Host 'Generating new material library layout...' -ForegroundColor Green
 Copy-Item ($dir.FullName+'\configs\3dsmax\material-map-browser.mpl') -Destination ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl') -Force
 $layoutSME = @(); $layoutSME = Get-Content ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl')
 Set-Content ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl') -Value $layoutSME.Replace('%RENDERTOOLS%',$dir.FullName)
+<#
+# [xml]$mtlbrowser = Get-Content ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl') 
+$xml = [xml](Get-Content ($dirEnu.FullName+'\en-US\defaults\MAX\MtlBrowser.mpl'))
+# $xml.mtlbrowser.group.name
+$names = $xml.mtlbrowser.group.name | Where-Object { $_ -like 'ms-corona*' }
+$names.ForEach{
+    Write-Host ('//group[@name="'+$_+'"]')
+    $node = $xml.SelectSingleNode('//group[@name="ms-corona-default.mat"]'); 
+    $node = $xml.SelectSingleNode('//group[@name="'+$_+'"]'); 
+    $xml.mtlbrowser.RemoveChild($node) | Out-Null
+}
+$mtlbrowser.mtlbrowser.group
+#>
+
+
+
 
 <# update material library or pull latest material libraries #>
 
