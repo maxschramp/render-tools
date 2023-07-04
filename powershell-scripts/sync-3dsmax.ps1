@@ -7,7 +7,6 @@ $dirProject = (Get-Item ([Environment]::GetFolderPath('MyDocuments')+'\3ds Max 2
 $dirENU = (Get-Item ($env:APPDATA.Replace('Roaming','Local')+'\Autodesk\3dsMax\2022 - 64bit\ENU')); Write-Host '3dsmax settings directory is: '$dirENU.FullName -ForegroundColor Blue
 
 <# create material libraries shortcut #>
-
 Write-Host 'Creating shortcut to material libraries...' -ForegroundColor Yellow
 $WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut(($dirProject.FullName+'\materiallibraries\material-libraries.lnk'))
@@ -33,6 +32,12 @@ $dirList = Get-ChildItem -Path $dir.FullName -Directory -Recurse
 for ($i = 0; $i -lt $dirList.Count; $i++) {
     Add-Content -Path ($dirProject.FullName+'\3ds Max 2022.mxp') -Value ('Dir'+(900 + $i)+'='+$dirList[$i].FullName)
 }
+
+<# Sync custom startup template #>
+Write-Host 'Adding render-tools startup template...' -ForegroundColor Yellow
+Copy-Item ($dir.FullName+'\configs\3dsmax\startup-template\render-tools.template') -Destination ($dirEnu.FullName+'\en-US\StartupTemplates\') -Force
+Set-Content -path ($dirEnu.FullName+'\en-US\StartupTemplates\render-tools.template') -Value (Get-Content ($dirEnu.FullName+'\en-US\StartupTemplates\render-tools.template')).Replace('%RENDERTOOLS%',$dir.FullName) # replace %RENDERTOOLS% with proper directory
+
 
 <# generate custom material library layout file #>
 <# I need to convert this to checking and then adding to the .xml #>
