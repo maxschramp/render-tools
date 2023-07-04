@@ -40,6 +40,10 @@ Write-Host 'Adding render-tools startup template...' -ForegroundColor Yellow
 Copy-Item ($dir.FullName+'\configs\3dsmax\startup-template\render-tools.template') -Destination ($dirEnu.FullName+'\en-US\StartupTemplates\') -Force
 Set-Content -path ($dirEnu.FullName+'\en-US\StartupTemplates\render-tools.template') -Value (Get-Content ($dirEnu.FullName+'\en-US\StartupTemplates\render-tools.template')).Replace('%RENDERTOOLS%',$dir.FullName) # replace %RENDERTOOLS% with proper directory
 
+<# Sync startup scripts #>
+New-Item -ItemType Directory -Path ($dirEnu.FullName+'\scripts\startup\render-tools\')
+Copy-Item ($dir.FullName+'\scripts\3dsmax\ms-loader\setup-quads.ms') -Destination ($dirEnu.FullName+'\scripts\startup\render-tools\') -Force
+Copy-Item ($dir.FullName+'\scripts\3dsmax\mcr\') -Destination ($dirEnu.FullName+'\scripts\startup\render-tools\') -Force -Container -Recurse
 
 <# generate custom material library layout file #>
 <# I need to convert this to checking and then adding to the .xml #>
