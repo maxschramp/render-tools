@@ -41,7 +41,8 @@ Copy-Item ($dir.FullName+'\configs\3dsmax\startup-template\render-tools.template
 Set-Content -path ($dirEnu.FullName+'\en-US\StartupTemplates\render-tools.template') -Value (Get-Content ($dirEnu.FullName+'\en-US\StartupTemplates\render-tools.template')).Replace('%RENDERTOOLS%',$dir.FullName) # replace %RENDERTOOLS% with proper directory
 
 <# Sync startup scripts #>
-New-Item -ItemType Directory -Path ($dirEnu.FullName+'\scripts\startup\render-tools\')
+Write-Host 'Syncing startup scripts...' -ForegroundColor Yellow
+New-Item -ItemType Directory -Path ($dirEnu.FullName+'\scripts\startup\render-tools\') -Force
 Copy-Item ($dir.FullName+'\scripts\3dsmax\ms-loader\setup-quads.ms') -Destination ($dirEnu.FullName+'\scripts\startup\render-tools\') -Force
 Copy-Item ($dir.FullName+'\scripts\3dsmax\mcr\') -Destination ($dirEnu.FullName+'\scripts\startup\render-tools\') -Force -Container -Recurse
 
