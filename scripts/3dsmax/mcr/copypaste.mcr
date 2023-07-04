@@ -1,14 +1,4 @@
-/*
-	This is a script that will help the user to copy and paste objects between
-	Mulitple opened max scenes.
-	In reality it's a quick merge operation done without any prompts for any sort of duplicated names or materials.
-	Duplicated names and materials will be renamed upon merge
-	
-	Created by Miled Rizk
-	e-mail: miledrizk@gmail.com
-*/
-
-macroscript CopyObjects buttontext: "Copy Objects" category: "render-tools"
+macroscript CopyObjects buttontext: "Copy Objects" toolTip:"Copy Objects" category: "render-tools"
 (
 	if selection.count > 0 then
 	(
@@ -25,7 +15,7 @@ macroscript CopyObjects buttontext: "Copy Objects" category: "render-tools"
 )--end macroscript
 
 
-macroscript PasteObjects buttontext: "Paste Objects" category: "render-tools"
+macroscript PasteObjects buttontext: "Paste Objects" toolTip:"Paste Objects" category: "render-tools"
 (
 	try
 	(
