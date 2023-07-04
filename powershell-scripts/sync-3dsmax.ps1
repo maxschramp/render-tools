@@ -1,10 +1,12 @@
 <# sync 3dsmax settings #>
 Clear-Host; Remove-Variable * -ErrorAction SilentlyContinue
 
-<# locoate directories #>
+<# locate directories #>
 $dir = (Get-Item $PSScriptRoot).Parent; Write-Host 'render-tools directory is: '$dir.FullName -ForegroundColor Blue
 $dirProject = (Get-Item ([Environment]::GetFolderPath('MyDocuments')+'\3ds Max 2022')); Write-Host '3dsmax project directory is: '$dirProject.FullName -ForegroundColor Blue
 $dirENU = (Get-Item ($env:APPDATA.Replace('Roaming','Local')+'\Autodesk\3dsMax\2022 - 64bit\ENU')); Write-Host '3dsmax settings directory is: '$dirENU.FullName -ForegroundColor Blue
+
+& ($dir.FullName+'\powershell-scripts\backup-3dsmax-settings.ps1')
 
 <# create material libraries shortcut #>
 Write-Host 'Creating shortcut to material libraries...' -ForegroundColor Yellow
@@ -77,3 +79,5 @@ Copy-Item -Path 'S:\render-tools\plugins\3dsmax\startup' -Destination ($dirENU.F
 <# set up simple UI #>
 
 # [Environment]::SetEnvironmentVariable("RENDER_TOOLS", $env:RENDER_TOOLS + $dir.FullName, "Machine") # Set the environment variable
+
+Pause
