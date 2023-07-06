@@ -29,7 +29,7 @@ $pathsExist.ForEach( {
 } )
 Set-Content ($dirProject.FullName+'\3ds Max 2022.mxp') -Value $paths
 
-$dirList = Get-ChildItem -Path $dir.FullName -Directory -Recurse
+$dirList = Get-ChildItem -Path ($dir.FullName+'\material-libraries') -Directory -Recurse
 
 for ($i = 0; $i -lt $dirList.Count; $i++) {
     Add-Content -Path ($dirProject.FullName+'\3ds Max 2022.mxp') -Value ('Dir'+(900 + $i)+'='+$dirList[$i].FullName)
