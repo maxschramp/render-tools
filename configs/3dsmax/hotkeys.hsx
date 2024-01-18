@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<MaxHotkeyTransformations Locked="false">
-    <Assign_Hotkey Shortcut="Ctrl+Alt+L" Description="Local Coordinate System" Id="647394-Coordsys_Local`Coordinate System"/>
-    <Unassign_Hotkey Shortcut="Ctrl+Alt+L" Description="Synchronize Particle Flow Layers" Id="256510522-40004"/>
-    <Assign_Hotkey Shortcut="Ctrl+Alt+K" Description="World Coordinate System" Id="647394-Coordsys_World`Coordinate System"/>
-</MaxHotkeyTransformations>

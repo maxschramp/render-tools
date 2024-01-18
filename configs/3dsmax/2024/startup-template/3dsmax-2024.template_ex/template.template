@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+    <Name>render-tools</Name>
+    <Description />
+    <ToolTip>Max&apos;s default template.</ToolTip>
+    <Thumbnail>C:\Users\Max\AppData\Local\Autodesk\3dsMax\2024 - 64bit\ENU\en-US\StartupTemplates\render-tools.png</Thumbnail>
+    <Workspace>Workspace1</Workspace>
+    <ProjectFolder />
+    <Scene>..\..\init-scene-2024.max</Scene>
+    <RollupConfig />
+    <ViewCube />
+    <ViewSettings>C:\Users\Max\AppData\Local\Autodesk\3dsMax\2024 - 64bit\ENU\en-US\StartupTemplates\render-tools.viewsettings</ViewSettings>
+    <UIColors />
+    <UserPaths>C:\Users\Max\AppData\Local\Autodesk\3dsMax\2024 - 64bit\ENU\en-US\StartupTemplates\render-tools.userpaths</UserPaths>
+    <MarketDefaults />
+</Template>
