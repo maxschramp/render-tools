@@ -23,10 +23,9 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
-*.bat
-
 # backup of 3dsmax files
 .backup-3dsmax-settings/
+.configs/3dsmax/2024/UI/.backups
 
 # Windows shortcuts
 *.lnk
