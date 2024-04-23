@@ -1,4 +1,4 @@
-macroScript Setup_Animation category:"render-tools" toolTip:"Setup Animation in Active Viewport"
+macroScript Setup_Animation category:"#render-tools" toolTip:"Setup Animation in Active Viewport"
 
 (
 	-- Set up camera and scene for animations
