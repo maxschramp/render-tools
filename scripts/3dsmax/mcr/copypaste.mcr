@@ -1,4 +1,4 @@
-macroscript CopyObjects buttontext: "Copy Objects" toolTip:"Copy Objects" category: "render-tools"
+macroscript CopyObjects buttontext: "Copy Objects" toolTip:"Copy Objects" category: "#render-tools"
 (
 	if selection.count > 0 then
 	(
