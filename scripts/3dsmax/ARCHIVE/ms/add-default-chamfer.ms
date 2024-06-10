@@ -1,4 +1,4 @@
-macroScript AdddefaultChamfer buttontext: "Add Default Chamfer" toolTip:"Add Default Chamfer" category:"#render-tools"
+macroScript "add-default-chamfer" category:"#render-tools"
 ( max modify mode
 c = Chamfer()
 c.name = "Quad Chamfer"
