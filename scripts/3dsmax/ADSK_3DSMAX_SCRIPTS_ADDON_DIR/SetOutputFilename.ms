@@ -9,14 +9,15 @@ function GetDate = (
 )
 
 function SetOutputFilename = (
-	f_project = "\\\\NAS-02\\"
-	python.execute("rt.f_project = os.path.basename(os.path.dirname(os.path.dirname(rt.maxFilePath)))")
+	f_project = "default"
+	python.execute("rt.f_project = rt.maxFilePath.split('\\\\')[rt.maxFilePath.split('\\\\').index('2024')+1]")
+	print f_project
 	f_date = GetDate()
 
 	if getActiveCamera() == undefined then f_camera = replace (viewport.getType() as string) 1 5 "" -- set to #view_type
 	else ( f_camera = (getActiveCamera()).name )
 
-	return "\\\\NAS-02\\deadline\\output\\" + f_project + "\\"  + f_camera + "\\" + f_date + "\\" + f_camera + "_.cxr"
+	return "\\\\NAS-02\\deadline\\output\\" + f_project + "\\"  + f_camera + "\\" + f_date + "\\" + f_camera + ".cxr"
 	
 	)
 	
