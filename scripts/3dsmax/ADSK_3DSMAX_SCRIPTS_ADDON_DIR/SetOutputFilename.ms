@@ -9,13 +9,15 @@ function GetDate = (
 )
 
 function SetOutputFilename = (
-	f_project = pathConfig.stripPathToLeaf(maxFilePath)
+	f_project = "default"
+	python.execute("rt.f_project = rt.maxFilePath.split('\\\\')[rt.maxFilePath.split('\\\\').index('2024')+1]")
+	print f_project
 	f_date = GetDate()
 
 	if getActiveCamera() == undefined then f_camera = replace (viewport.getType() as string) 1 5 "" -- set to #view_type
 	else ( f_camera = (getActiveCamera()).name )
 
-	return "\\\\NAS-02\\work\\" + f_project + "output\\" + f_camera + "\\" + f_date + "\\" + f_camera + ".cxr"
+	return "\\\\NAS-02\\deadline\\output\\" + f_project + "\\"  + f_camera + "\\" + f_date + "\\" + f_camera + ".cxr"
 	
 	)
 	
@@ -24,4 +26,5 @@ rendSaveFile = True
 rendOutputFilename = SetOutputFilename()
 rendOutputFilepath = pathConfig.stripPathToLeaf(rendOutputFilename)
 python.execute("os.makedirs(os.path.dirname(rt.rendOutputFilename), exist_ok=True)")
+format "\nSaving file to: %" rendOutputFilename
 renderSceneDialog.update
