@@ -1,0 +1,4 @@
+1) Install the PRO or free version of the plugin "Sweep Profile" by dragging the file SweepProfile.mzp into the 3Ds Max viewport.
+2) Drag the "Install Sweep-Profile Shapes.mzp" into the 3dsmax viewport.
+3) Start the plugin "Sweep Profile" and choose the directory with shapes on the top list of the plugin.
+You can find the PRO version on this page https://3d-kstudio.com/product/sweep-profile/
