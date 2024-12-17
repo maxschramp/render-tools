@@ -1,0 +1,12 @@
+<install folderName="SweepProfile" pluginName="Sweep Profile" id="46">
+	<install>
+		<userIconsDirectory sourcePath="install\usericons" targetPath="$userIcons"/>
+		<targetDirectory sourcePath="" targetPath="$userScripts\Kstudio\%folderName%\"/>
+		<directory sourcePath="Controls\" targetPath="$userScripts\Kstudio\%folderName%\Controls\"/>
+		<directory sourcePath="install\" targetPath="$userScripts\Kstudio\%folderName%\install\"/>
+		<directory sourcePath="Services\" targetPath="$userScripts\Kstudio\%folderName%\Services\"/>
+	</install>
+	<uninstall>
+		<file path="$userMacros\Kstudio-SweepProfile.mcr" checkPlugins=""/>
+	</uninstall>
+</install>
