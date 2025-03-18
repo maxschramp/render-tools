@@ -1,5 +1,5 @@
 macroScript DropToSlateRW
-category:"Nik Scripts"
+category:"#render-tools"
 toolTip:"DropToSlate Resize"
 icon:#("DropToSlateRW",1)
 (
