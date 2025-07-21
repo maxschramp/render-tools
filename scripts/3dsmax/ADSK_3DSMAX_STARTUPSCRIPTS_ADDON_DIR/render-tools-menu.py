@@ -13,9 +13,11 @@ def sort(e):
 def getActionID(file: os.path) -> str:
     macroscript = file # set macroscript to item
     with open(os.path.join(os.getenv("ADSK_3DSMAX_MACROS_ADDON_DIR"), macroscript), 'r') as f: # read the macroscript file
-        actionID = ((re.split(r"(?i)macroScript", f.read())[1].split(" ")[1]).split("category:")[0]).split("\n")[0] # pull the actionID (name without spaces between macroScript and category)
-    print(fr"macroscript name: {macroscript} macroscript ID: {actionID}") # print the name of the macroscript and the actionID
-    return actionID 
+        content = f.read()
+        actionID = ((re.split(r"(?i)macroScript", content)[1].split(" ")[1]).split("category:")[0]).split("\n")[0] # pull the actionID (name without spaces between macroScript and category)
+        category = ((re.split(r"(?i)category:", content)[1].split('"')[1])) # pull the category
+    print(fr"macroscript name: {macroscript} macroscript ID: {actionID} category: {category}") # print the name of the macroscript and the actionID
+    return {actionID: category} # return as a dictionary with the key: value as actionID: category (e.g. CameraLister: #render-tools)
 
 def createMenu(dir: str) -> list:
     menu: list = [] # create list
@@ -33,12 +35,12 @@ def createMenu(dir: str) -> list:
 def createSubmenu(parentMenu: any, children: list): # input the parent menu and the list of items to add
     macroscriptTableid = 647394 # default macroscipt table ID value
     for child in children: # for each menu item check if it's a dictionary, in which case create a submenu with the dictionary name and then the list inside of it.
-        if isinstance(child, dict): # is the child a dictionary?
-            for key, value in child.items():
+        for key, value in child.items():
+            if isinstance(value, list):
                 createSubmenu(parentMenu.createSubmenu(f"{uuid.uuid4()}", key), value)
-
-        else:
-            parentMenu.createAction(f"{uuid.uuid4()}", macroscriptTableid, f"{child}`#render-tools") # tableId: 647394 actionId: AssemblyTool`#render-tools
+            else:
+                for key, value in child.items():
+                    parentMenu.createAction(f"{uuid.uuid4()}", macroscriptTableid, f"{key}`{value}") # tableId: 647394 actionId: AssemblyTool`#render-tools
 
 menuItems = createMenu(dir)
 menuItems.sort(key=sort)
@@ -94,7 +96,7 @@ def menucallback():
     # To place the menu at a specific position, use the 'beforeID' parameter with the GUID of the suceeding menu item
     # Note that every menu item in the menu system needs a persistent Guid for identification and referencing
     submenu = mainmenubar.createSubmenu("F7B07F21-B82C-4A84-8557-1CA9EAB40A9B",
-        "#render-tools")
+        "DSAI Scripts")
    
     # build the menus
     createSubmenu(submenu, menuItems)
