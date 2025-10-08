@@ -24,6 +24,23 @@ MacroScript AdjustOutput
 			)
 		)
 	)
+	
+	fn resetIOR = 
+	(
+		view = sme.GetView sme.activeView
+		selected_nodes = view.GetSelectedNodes()
+
+		for nodes in selected_nodes do
+		(
+			nodes.reference.baseIor = 1.5
+			nodes.reference.baseIorTexmapOn = false
+			nodes.reference.baseRoughness = 1.0
+			nodes.reference.baseRoughnessTexmapOn = false
+			
+			print nodes.reference.baseIor
+			print nodes.reference.baseIorTexmapOn
+		)
+	)
 
 	rollout valueRollout "Output Amount"
 	(
@@ -32,6 +49,7 @@ MacroScript AdjustOutput
 		button btnReset   "Reset"
 		button btnPlus05  "+0.5"
 		button btnPlus1   "+1.0"
+		button btnResetIor "Reset IOR"
 
 		on btnMinus1 pressed do
 		(
@@ -59,7 +77,13 @@ MacroScript AdjustOutput
 			format "Button +1.0 pressed\n"
 			AdjustOutputAmount(1.0)
 		)
+		on btnResetIor pressed do
+		(
+			format "Button Reset IOR pressed\n"
+			resetIOR()
+		)
+		
 	)
 
-	createDialog valueRollout width:100 height:150
+	createDialog valueRollout width:100 height:200
 )
