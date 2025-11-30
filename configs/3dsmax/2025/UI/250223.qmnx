@@ -39,4 +39,10 @@
     <CreateMenuAction MenuId="72fd3804-0ed3-47f5-8a37-32ab604e05ef" Id="1578b1c4-17f2-4518-b9e7-e1d93ed5e61c" ActionId="647394-ResetXformUI`PEN Tools" BeforeId="9cd8b262-3e68-46e9-a1b2-94b4cd380767"/>
     <CreateMenuAction MenuId="87c1cbce-8713-4d1f-bfeb-384c6047b782" Id="370365fd-c670-4ad7-94fe-b7b576f8271a" ActionId="647394-AdjustOutput`#render-tools" BeforeId="fdb555a3-4bdf-46c1-ad6a-adc03761c9cc"/>
     <CreateMenuAction MenuId="87c1cbce-8713-4d1f-bfeb-384c6047b782" Id="2afbe39f-dac3-4be3-b691-c4658d469764" ActionId="647394-ClearRenderElements`#render-tools"/>
+    <CreateMenuAction MenuId="87c1cbce-8713-4d1f-bfeb-384c6047b782" Id="c3becf17-be9d-46a3-8536-f842b2c9a9b7" ActionId="647394-CopyPasteDWG`Pixamoon" BeforeId="72fd3804-0ed3-47f5-8a37-32ab604e05ef"/>
+    <CreateMenuAction MenuId="87c1cbce-8713-4d1f-bfeb-384c6047b782" Id="2b638876-f787-4857-b813-cda9c8f7d73c" ActionId="647394-CoronaBitmapTriplanar`#render-tools" BeforeId="fdb555a3-4bdf-46c1-ad6a-adc03761c9cc"/>
+    <CreateMenuAction MenuId="72fd3804-0ed3-47f5-8a37-32ab604e05ef" Id="4685eaeb-f5d6-456d-8f35-55710b1acd6d" ActionId="647394-InstantlyAutoEdges`#render-tools" BeforeId="442bc1bc-d192-47c2-adc8-8242a296eb42"/>
+    <DeleteItem Id="442bc1bc-d192-47c2-adc8-8242a296eb42"/>
+    <CreateMenuAction MenuId="72fd3804-0ed3-47f5-8a37-32ab604e05ef" Id="4762b00e-a395-4228-9fa1-5fa543b15f54" ActionId="647394-UVT_XformReset`Nik Scripts - UV Tools" BeforeId="9cd8b262-3e68-46e9-a1b2-94b4cd380767"/>
+    <DeleteItem Id="1578b1c4-17f2-4518-b9e7-e1d93ed5e61c"/>
 </MaxQuadMenuTransformations>
